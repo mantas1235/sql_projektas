@@ -1,0 +1,52 @@
+<h2>Pridėkite daina į playlist</h2>
+<form method="POST" action="/new">
+<label for="pavadinimas">Pavadinimas</label>
+<input type="text" name="pavadinimas">
+<label for="albumas">Albumas</label>
+<input type="text" name="albumas">
+<div class="add">
+
+  <button>Add</button>
+</div>
+
+
+
+
+
+
+</form>
+
+<table class='table table-hover'>
+<thead>
+    <tr>
+    <th>Dainos ID</th>    
+<th>Dainos Pavadinimas</th>
+<th> Albumas</th>
+
+    </tr>
+</thead>
+
+
+
+<tbody>
+{{#each songs}}
+<tr>
+    <td>#{{id}}</td>
+<td>{{song_Name}}</td>
+<td>  {{song_Album}}</td>
+
+<td><a href="/delete/{{id}}" class="btn btn-danger ">Istrinti</a></td>
+<td><a href="/edit/{{id}}" class="btn btn-success ">redaguoti</a></td>
+
+
+
+
+
+</tr> 
+{{/each}}
+</tbody>
+
+
+</table>
+
+<a href="/playlist">Playlistai</a>
